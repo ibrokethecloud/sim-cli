@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+
+cd $(dirname $0)/..
+
+mkdir -p bin
+
+GOARCH=amd64 GOOS=linux CGO_ENABLED=0 go build -ldflags "-X cmd.Image=$SUPPORT_BUNDLE_KIT_IMAGE $LINKFLAGS" -o bin/sim-cli-linux-amd64
+GOARCH=arm64 GOOS=linux CGO_ENABLED=0 go build -ldflags "-X cmd.Image=$SUPPORT_BUNDLE_KIT_IMAGE $LINKFLAGS" -o bin/sim-cli-linux-arm64
+GOARCH=arm64 GOOS=darwin CGO_ENABLED=0 go build -ldflags "-X cmd.Image=$SUPPORT_BUNDLE_KIT_IMAGE $LINKFLAGS" -o bin/sim-cli-darwin-arm64
