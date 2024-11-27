@@ -39,8 +39,10 @@ Flags:
 ```
 
 ### Creating a new instance
-`sim-cli create --name issue-7007 --bundle-path $HOME/Downloads/supportbundle_207d0deb-1cf3-46c8-aedb-fd3d28d04530_2024-09-04T07-00-02Z.zip
-` will create a new simulator instance by packaging the zip file of the support bundle into a base image of support-bundle-kit.
+```
+sim-cli create --name issue-7007 --bundle-path $HOME/Downloads/supportbundle_207d0deb-1cf3-46c8-aedb-fd3d28d04530_2024-09-04T07-00-02Z.zip
+```
+will create a new simulator instance by packaging the zip file of the support bundle into a base image of support-bundle-kit.
 It will run a new instance using the newly create image, and export the kubeconfig from the running instance and merge
 it in to the default simulator config file `$HOME/.sim/admin.kubeconfig`
 ```markdown

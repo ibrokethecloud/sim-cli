@@ -9,7 +9,7 @@ RUN zypper -n install bash git gcc docker
 ENV GO111MODULE on
 ENV DAPPER_ENV REPO TAG DRONE_TAG
 ENV DAPPER_SOURCE /go/src/github.com/ibrokethecloud/sim-cli/
-ENV DAPPER_OUTPUT ./bin ./dist ./pkg
+ENV DAPPER_OUTPUT ./bin ./pkg
 ENV DAPPER_DOCKER_SOCKET true
 ENV HOME ${DAPPER_SOURCE}
 WORKDIR ${DAPPER_SOURCE}
